@@ -1,11 +1,22 @@
 let Phrase = require("guwort-palindrome");
 
-let string = prompt("Please enter a phrase for palindrome testing:");
+function palindromeTester(event){
+  event.preventDefault();
 
-let phrase = new Phrase(string);
+  let phrase = new Phrase(event.target.phrase.value);
 
-if (phrase.palindrome()) {
-    alert(`"${phrase.content}" is a palindrome!`);
+  let result = document.querySelector("#palindromeResult");
+  
+  if (phrase.palindrome()) {
+    result.innerHTML = `"${phrase.content}" is a palindrome!`;
   } else {
-    alert(`"${phrase.content}" is not a palindrome.`);
+    result.innerHTML = `"${phrase.content}" is not a palindrome.`;
   }
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  let tester = document.querySelector("#palindromeTester");
+  tester.addEventListener("submit", function(event) {
+    palindromeTester(event);
+  });
+});
