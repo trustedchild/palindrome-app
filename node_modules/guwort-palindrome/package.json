@@ -1,0 +1,25 @@
+{
+  "name": "guwort-palindrome",
+  "version": "0.1.0",
+  "description": "palindrome detector",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trustedchild/palindrome.git"
+  },
+  "keywords": [
+    "palindrome",
+    "thomas",
+    "guwor",
+    "javascript"
+  ],
+  "author": "Thomas Guwor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trustedchild/palindrome/issues"
+  },
+  "homepage": "https://github.com/trustedchild/palindrome#readme"
+}
