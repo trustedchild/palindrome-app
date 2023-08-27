@@ -4,8 +4,6 @@ let Phrase = require("guwort-palindrome");
 function palindromeTester(event){
   event.preventDefault();
 
-  //let string = prompt("Please enter a phrase for palindrome testing:");
-
   let phrase = new Phrase(event.target.phrase.value);
 
   let result = document.querySelector("#palindromeResult");
@@ -39,18 +37,7 @@ function Phrase(content) {
   this.processedContent = function processedContent() {
     return this.letters().toLowerCase();
   }
-
-  // this.letters = function letters() {
-  //   let theLetters = [];
-  //   const letterRegex = /[a-z]/i;
-  //   Array.from(this.content).forEach(function(character) {
-  //     if (character.match(letterRegex)) {
-  //       theLetters.push(character);
-  //     }
-  //   });
-  //   return theLetters.join("");
-  // }
-
+  
   // Returns the letters in the content.
   // For example:
   //   new Phrase("Hello, world!").letters() === "Helloworld"
@@ -61,7 +48,11 @@ function Phrase(content) {
 
   // Returns true if the phrase is a palindrome, false otherwise.
   this.palindrome = function palindrome() {
-    return this.processedContent() === this.processedContent().reverse();
+    if (this.letters()){
+      return this.processedContent() === this.processedContent().reverse();
+    } else {
+      return false;
+    }
   }
 }
 },{}]},{},[1]);
